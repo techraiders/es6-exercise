@@ -1,0 +1,17 @@
+{
+  "name": "drones",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "author": "navi",
+  "license": "ISC",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
