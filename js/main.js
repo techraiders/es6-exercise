@@ -1,6 +1,7 @@
-const iterable = ['x', 'y', 'z'];
+const iterable = ['x', 'y', 'z', undefined];
 const iterator = iterable[Symbol.iterator]();
 
+console.log(iterator.next());
 console.log(iterator.next());
 console.log(iterator.next());
 console.log(iterator.next());
@@ -27,3 +28,4 @@ iterator.next() {
 	value: undefined,
 	done true
 }*/
+
