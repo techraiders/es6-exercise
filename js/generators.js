@@ -82,11 +82,24 @@ function* techInterview () {
 {
 	const Iterator = techInterview();
 	const q = Iterator.next().value; // Iterator yields question
-	console.log(q);
-  const a = Iterator.next('Scott Hanselmann').value;
-  console.log(a);
+	console.log(q); // Who is the CEO of Tesla?
+  const a = Iterator.next('Scott Hanselmann').value; // Scott Hanselmann
+  console.log(a); // No Way!
 }
 
-// Who is the CEO of Tesla?
-// Scott Hanselmann
-// No Way!
+{
+	const Iterator = techInterview();
+	const q = Iterator.next().value; // Iterator yields another question
+	console.log(q); // Who is the CEO of Tesla?
+	const a = Iterator.next('Jimmy Kimmel').value; // Jimmy Kimmel
+	// Pass wrong answer back into generator
+	console.log(a); // No Way!
+}
+
+{
+	const Iterator = techInterview();
+	const q = Iterator.next().value; // Iterator yields another question
+	console.log(q); // Who is the CEO of Tesla?
+	const a = Iterator.next('Elon Musk').value; // Elon Musk
+	console.log(a); // Okay on to the next question
+}
