@@ -29,7 +29,7 @@ Outrightly, generators don't have a way of representing results of asynchronous 
 */
 
 
-//-------------------------------------------------
+/*-------------------------------------------------
 function* race() {
 	var lap1 = yield 20;
 	console.assert(lap1 === 35, 'lap1 is not 35');
@@ -45,4 +45,23 @@ console.log(lap3); // {value: 55, done: true}
 
 /*
 Explanation: In the example above, r.next() is called once to get it to the yield and then called a second time and passed a value which is the result of the yield expression. This way, race() can then proceed to return statement to return a final result. This can be implemented by calling .next(result) to show that a promise has been fulfilled with result.
+
+But what if our promise that is yield is rejected? We can show this by using the .throw(error) method:
+*/
+
+var shortcut = new Error('too fast');
+function* race() {
+	try {
+		yield 100;
+	} catch (h) {
+		console.assert (h === shortcut, 'h is not equal to the error "too fast".');
+	}
+}
+
+var r = race();
+r.next(); // {value: 100, done: false}
+r.throw(shortcut);
+
+/*
+Just as in the previous example, r.next() is called to obtain the first yield keyword. we use r.throw(error) to signal rejection as it causes our generator to behave like an error was thrown by yield. This automatically triggers the catch block.
 */
