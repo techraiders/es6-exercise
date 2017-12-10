@@ -61,7 +61,32 @@ function* race() {
 var r = race();
 r.next(); // {value: 100, done: false}
 r.throw(shortcut);
-
 /*
 Just as in the previous example, r.next() is called to obtain the first yield keyword. we use r.throw(error) to signal rejection as it causes our generator to behave like an error was thrown by yield. This automatically triggers the catch block.
 */
+
+
+
+
+/*
+Let's take one more example where we attempt two-way communication with generators. Here next() can actually assign values which are received from the generator:
+*/
+function* techInterview () {
+	const answer = yield 'Who is the CEO of Tesla?';
+	console.log(answer);
+
+	if (answer !== 'Elon Musk') return 'No Way!'
+  return 'Okay, on the next question';
+}
+
+{
+	const Iterator = techInterview();
+	const q = Iterator.next().value; // Iterator yields question
+	console.log(q);
+  const a = Iterator.next('Scott Hanselmann').value;
+  console.log(a);
+}
+
+// Who is the CEO of Tesla?
+// Scott Hanselmann
+// No Way!
