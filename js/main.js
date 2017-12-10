@@ -1,4 +1,3 @@
-
 /*const iterable = ['x', 'y', 'z', undefined];
 const iterator = iterable[Symbol.iterator]();
 
@@ -75,4 +74,5 @@ const codebeast = {
 
 for (const letter of codebeast) {
 	console.log(letter);
-}*/
+}
+*/

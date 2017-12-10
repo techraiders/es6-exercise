@@ -8,10 +8,10 @@
   },
   "author": "navi",
   "license": "ISC",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "es6-module-loader": "^0.17.11",
+    "live-server": "^1.2.0",
+    "traceur": "0.0.111"
   }
 }
