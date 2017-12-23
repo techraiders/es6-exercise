@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "es6-module-loader": "^0.17.11",
-    "live-server": "^1.2.0",
-    "traceur": "0.0.111"
+    "@babel/standalone": "^7.0.0-beta.35",
+    "babel-standalone": "^6.26.0",
+    "live-server": "^1.2.0"
   }
 }
