@@ -70,7 +70,7 @@ Just as in the previous example, r.next() is called to obtain the first yield ke
 
 /*
 Let's take one more example where we attempt two-way communication with generators. Here next() can actually assign values which are received from the generator:
-*/
+
 function* techInterview () {
 	const answer = yield 'Who is the CEO of Tesla?';
 	console.log(answer);
@@ -102,4 +102,22 @@ function* techInterview () {
 	console.log(q); // Who is the CEO of Tesla?
 	const a = Iterator.next('Elon Musk').value; // Elon Musk
 	console.log(a); // Okay on to the next question
+}*/
+
+
+
+
+
+/* GENERATORS CREATING ITERATOR BY KYLE SIMPSON */
+
+function *main () {
+	console.log('hello');
 }
+
+const it = main();
+//console.log(it); // Generator {_invoke: ƒ}
+
+console.log(it.next());
+/* Output:
+    hello
+		{value: undefined, done: true}*/

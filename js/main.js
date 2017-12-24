@@ -82,10 +82,7 @@ for (const letter of codebeast) {
 
 
 
-
-
-
-/* CREATING OUR OWN CUSTOM ITERATOR IN JAVASCRIPT OBJECT*/
+/* CREATING OUR OWN CUSTOM ITERATOR IN JAVASCRIPT OBJECT
 const obj = {
 	[Symbol.iterator] () {
 		let st = this.start, en = this.end, idx = st;
@@ -109,4 +106,4 @@ const obj = {
 };
 
 let vals = [...obj];
-console.log(vals);
+console.log(vals);*/
