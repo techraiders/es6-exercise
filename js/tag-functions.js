@@ -4,7 +4,7 @@
 	console.log(strings); // ["Hello, ", ", your order (#", ") was $", ".", raw: Array(4)]
 	console.log(values); // ["Kyle", "123", 319.7]
 	return 'I am evil';
-}*/
+}
 
 function currency (strings, ...values) {
 	let str = '';
@@ -29,4 +29,23 @@ let msg = currency`Hello, ${name}, your \
 order (#${orderNumber}) was $${total}.`;
 
 //console.log(msg); // 'I am evil'
-console.log(msg); // 'Hello, Kyle, your order (#123) was $319.7.'
+console.log(msg); // 'Hello, Kyle, your order (#123) was $319.7.'*/
+
+
+
+
+
+/* EXERCISE: To write a tag function that uppercases only the values not strings. */
+
+function upper (strings, ...values) {
+	
+}
+
+let name = 'Kyle',
+		twitter = 'getify',
+		className = 'es6 workshop';
+
+console.log(
+	`Hello ___ (@___), welcome to the ____!` ===
+	'Hello KYLE (@GETIFY), welcome to the ES6 WORKSHOP'
+);
