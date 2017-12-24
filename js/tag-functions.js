@@ -1,0 +1,16 @@
+/* Tag function serves kind of like a pre processors, it's like a macro */
+
+function foo (strings, ...values) {
+	console.log(strings); // ["Hello, ", ", your order (#", ") was $", ".", raw: Array(4)]
+	console.log(values); // ["Kyle", "123", 319.7]
+	return 'I am evil';
+}
+
+let name = 'Kyle';
+let orderNumber = '123';
+let total = 319.7;
+
+let msg = foo`Hello, ${name}, your \
+order (#${orderNumber}) was $${total}.`;
+
+console.log(msg); // 'I am evil'
