@@ -114,7 +114,7 @@ function *main () {
 	console.log('hello');
 	yield 9;
 	console.log('world');
-	return 10;
+	yield 10;
 }
 
 const it = main();
@@ -133,5 +133,4 @@ console.log(it.next());
 
 for (let v of main()) {
 	console.log(v);
-	// for... of loop doesn't picks the value whose done property is true.
 }
