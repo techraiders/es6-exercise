@@ -136,7 +136,7 @@ const it = main();
 }*/
 
 
-/* EXERCISE */
+/* EXERCISE
 let numbers = {
 	*[Symbol.iterator]({start = 0, step = 1, end = 100} = {}) {
 		for (let i = start; i <= end; i = i + step ) {
@@ -157,4 +157,17 @@ for (let num of numbers[Symbol.iterator]({
 	end: 30
 })) {
 	console.log(num);
-}
+}*/
+
+
+
+/* CREATES RANGE OF VALUES GENERATOR IN NUMBER OBJECT */
+Number.prototype[Symbol.iterator] = function*  () {
+	// here 'this' refers to the number object, when coerced it represents its value.
+	for (let i = 0; i < this; i++) {
+		yield i;
+	}
+};
+
+// ... operator below pulls values one by one calling iterator.next() method
+console.log([...8]);
