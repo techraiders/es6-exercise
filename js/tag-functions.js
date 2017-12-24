@@ -38,7 +38,12 @@ console.log(msg); // 'Hello, Kyle, your order (#123) was $319.7.'*/
 /* EXERCISE: To write a tag function that uppercases only the values not strings. */
 
 function upper (strings, ...values) {
-	
+	let str = '';
+	for (let i = 0; i < strings.length; i++) {
+		if (i) str += values[i - 1].toUpperCase();
+		str += strings[i];
+	}
+	return str;
 }
 
 let name = 'Kyle',
@@ -46,6 +51,6 @@ let name = 'Kyle',
 		className = 'es6 workshop';
 
 console.log(
-	`Hello ___ (@___), welcome to the ____!` ===
-	'Hello KYLE (@GETIFY), welcome to the ES6 WORKSHOP'
+	upper`Hello ${name} (@${twitter}), welcome to the ${className}!` ===
+	'Hello KYLE (@GETIFY), welcome to the ES6 WORKSHOP!'
 );
