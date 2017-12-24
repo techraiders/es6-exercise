@@ -6,10 +6,16 @@
 	return 'I am evil';
 }*/
 
-function foo (strings, ...values) {
+function currency (strings, ...values) {
 	let str = '';
 	for (let i = 0; i < strings.length; i++) {
-		if (i) str += values[i - 1];
+		if (i) {
+			if (typeof values[i - 1] === 'number') {
+				str += values[i - 1].toFixed(2);
+			} else {
+			  str += values[i - 1];
+		  }
+		}	
 		str += strings[i];
 	}
 	return str;
@@ -19,7 +25,7 @@ let name = 'Kyle';
 let orderNumber = '123';
 let total = 319.7;
 
-let msg = foo`Hello, ${name}, your \
+let msg = currency`Hello, ${name}, your \
 order (#${orderNumber}) was $${total}.`;
 
 //console.log(msg); // 'I am evil'
