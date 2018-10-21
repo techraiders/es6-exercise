@@ -19,9 +19,6 @@ courseInfo.id = 'js_course';
 console.log(courseInfo); // {title: "ES6", topics: Array(4), id: "js_course", Symbol(): 41284}
 
 
-
-
-
 // The symbol function optionally takes the string value, that works as label for debugging.
 const x = Symbol('Whatever description you want only for debugging perspective.');
 
@@ -67,6 +64,15 @@ Purpose:
   	e.g If we want to hook how things are stringified whenever we call toString() on it I customize that at the hook location toStringTag.
 
   	e.g I we want to control whether or not an object should be spread if it's passed to Concat method, we control that with isConcatSpreadable.*/
+
+/************** WELL KNOWN SYMBOLS **********/
+let numbers = [1, 2, 3];
+console.log(numbers + 1); // '1,2,31'
+
+numbers[Symbol.toPrimitive] = function () {
+  return 999;
+};
+console.log(numbers + 1);
 
 
 /********** SHARED SYMBOL ***********/
